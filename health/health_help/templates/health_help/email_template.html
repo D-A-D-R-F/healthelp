@@ -1,0 +1,13 @@
+<html lang="en">
+    {% load static %}
+ <head>
+  <link href="{% static 'main.css' %}" rel="stylesheet">
+ </head>
+ <body>
+  <div class="email_header">
+      
+  </div>
+  <div class="email_body">
+   {% include "health_help/email_message.txt" %}
+  </div>
+ </body>

@@ -1,0 +1,106 @@
+{% extends 'health_help/layout.html' %}
+{% load static %}
+{% block title %}Excercise{% endblock %}
+{% block body %}
+<h1 class="text-center display-3">Excercise</h1>
+<hr style="width:50%" class="mx-auto">
+{% if message %}
+<div class="alert alert-success mx-auto text-center" style="width:50%" role="alert">
+    {{ message }}
+  </div>       
+  {% endif %}
+<br>
+
+<div class="container mx-auto text-center">
+  <div class="row">
+    <div class="col text-start">
+      <h1 class="text-start fs-3">Some Youtube Channels to Follow : -</h1>
+      <ul class="text-start fs-5">
+      {% for excercise in excercises %}
+      <li><a href="{{excercise.link}}" target="_blank" style="text-decoration:none" id="excercise-text" class="text-info">{{excercise.title}}</a></li>
+      {% endfor %}
+      </ul>
+      <br><br>
+      <p class="text-start fs-4 fw-bold"  id="calorie-intake"></p>
+    </div>
+    <div class="col">
+      <h1 class="fs-3 text-center">Calorie Counter</h1>
+      <p class="text-center fs-6">Enter in the following details to get your estimated calorie requirement.</p>
+      <form id="calorie-form">
+        <label for="weight-inp">Weight in kg.</label>
+        <br>
+        <input type="number" name="" id="weight-inp" placeholder="Eg: 50" required min="0">
+        <br>
+        <br>
+        <label for="gender">Gender</label>
+        <br>
+        <select class="form-select mx-auto" id="gender" required>
+          <option value="male" selected>Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br>
+        <label for="height">Height in cm.</label>
+        <br>
+        <input type="number" name="" id="height" placeholder="Eg: 175" required min="50" max="255">
+        <br>
+        <br>
+        <label for="age">Age</label>
+        <br>
+        <input type="number" name="" id="age" placeholder="Eg: 50" required min="18" max="118">
+        <br>
+        <br>
+
+        <label for="activity">Daily activity</label>
+        <select class="form-select mx-auto" id="activity" required>
+          <option value="sedentary" selected>Little or no excercise</option>
+          <option value="light">Light excercise</option>
+          <option value="moderate">Moderate excercise</option>
+          <option value="very">Intense excercise</option>
+        </select>
+        <br>
+        <button class="btn-light btn mx-auto text-center" type="submit">Calculate</button>
+        
+      </form>
+      <br>
+      <p class="text-center fw-bold text-info">Please note that this information will only be used to calculate your estimated calorie requirements and will be stored on your local machine and not on the server.</p>
+    </div>
+  </div>
+</div>
+
+<br>
+<div id="data">
+  <h3 class=" fs-3 text-center">Some recipies to try out:-</h3>
+
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="fs-5">
+        {% for recipie in recipies1 %}
+        <li><a href="{{recipie.link}}" id="recipie-links" class="text-light fw-bold" target="_blank">{{recipie.title}}</a> - {{recipie.calories}} Kcal</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="col">
+      <ul class="fs-5">
+        {% for recipie in recipies2 %}
+        <li><a href="{{recipie.link}}" id="recipie-links" class="text-light fw-bold" target="_blank">{{recipie.title}}</a> - {{recipie.calories}} Kcal</li>
+        {% endfor %}
+        </ul>
+      </div>
+    <div class="col">
+      <ul class="fs-5">
+        {% for recipie in recipies3 %}
+        <li><a href="{{recipie.link}}" id="recipie-links" class="text-light fw-bold" target="_blank">{{recipie.title}}</a> - {{recipie.calories}} Kcal</li>
+        {% endfor %}
+        </ul>
+      </div>
+  </div>
+</div>
+
+</div>
+
+
+<script src="{% static 'health_help/calorie.js' %}"></script>
+
+
+{% endblock %}

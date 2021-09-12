@@ -1,0 +1,82 @@
+{% extends 'health_help/layout.html' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+
+{% if user.is_authenticated %}
+
+<div class="alert alert-danger alert-dismissible fade show ms-auto text-center" id="covid-alert" role="alert">
+    <strong class="text-center">Covid 19 -  {{data}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<br>
+
+<div id="all_features" class="text-center">
+  <a href="{% url 'tablets' %}" style="text-decoration: none;color:black">
+  <div id="tabs-div">
+    <h1 class="text-center fs-2">My Tablets</h1>
+    <p class="fw-bold">Keep track of your tablets.</p>
+  </div>
+</a>
+
+<a  href="{% url 'blog' %}" style="text-decoration: none;color:black">
+<div id="blog-div">
+  <h1 class="text-center fs-2">Blog</h1>
+  <p class="fw-bold">Read new blog posts by users.</p>
+</div>
+</a>
+
+<a  href="{% url 'excercise' %}" style="text-decoration: none;color:black">
+  <div id="excercise-div">
+    <h1 class="text-center fs-2">Excercise</h1>
+    <p class="fw-bold">Get workouts to help with your fitness.</p>
+  </div>
+  </a>
+
+  <a  href="{% url 'doctor' %}" style="text-decoration: none;color:black">
+    <div id="doctor-div">
+      <h1 class="text-center fs-2">Doctor</h1>
+      <p class="fw-bold">Share your stats with your Doctor.</p>
+    </div>
+  </a>
+
+  <a  href="{% url 'facts' %}" style="text-decoration: none;color:black" >
+    <div id="facts-div">
+      <h1 class="text-center fs-2">Facts</h1>
+      <p class="fw-bold">Read some interesting and funny facts on health!</p>
+    </div>
+  </a>
+
+  <a  href="{% url 'about' %}" style="text-decoration: none;color:black" >
+    <div id="about-div">
+      <h1 class="text-center fs-2">About</h1>
+      <p class="fw-bold">
+        The idea...
+      </p>
+
+    </div>
+  </a>
+
+</div>
+ 
+
+{% else %}
+        <div id="main-div">
+            <h1 class="text-start display-2 ">Welcome to HealtHelp!</h1>
+            <p class="text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus nunc et dui tincidunt, ac mattis libero aliquam. Aliquam id luctus velit. Quisque non orci scelerisque, commodo risus non, lacinia velit. Nulla in maximus odio. Suspendisse potenti. Etiam eget blandit libero. Suspendisse imperdiet nisi at maximus elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <a class="btn btn-light" id="home-login" href="{% url 'register' %}">Register</a>
+            <a class="btn btn-light" id="home-login" href="{% url 'login' %}">Login</a>
+            <br>
+            <hr style="width:100%">
+
+        </div>
+
+{% endif %}
+
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+{% extends 'health_help/layout.html' %}
+{% load static %}
+{% block title %}Add Post{% endblock %}
+{% block body %}
+<h1 class="display-3 text-center">Add Post</h1>
+<hr style="width:50%" class="mx-auto">
+
+{% if message %}
+<div class="alert alert-success mx-auto text-center" style="width:50%" role="alert">
+    {{ message }}
+  </div>       
+  {% endif %}
+<br>
+
+<div class="mx-auto text-center">
+    <b class="fw-bold text-light text-center">Fields marked * are required.</b>
+    
+<form action="{% url 'add_post' %}" method="post">
+    {% csrf_token %}
+    <textarea name="content" id="blog-text" class="mx-auto text-start" required placeholder="Main text *"></textarea>
+    <br>
+    <br><br>
+    <input type="text" name="title"  class="mx-auto blog-fields" placeholder="Title *" required maxlength="100">
+    <br>
+    <input type="url" name="image"  class="mx-auto blog-fields" placeholder="Image Url">
+
+    <br>
+    <br>
+    <button class="btn btn-lg btn-light" type="submit" style="width:25%;">Add</button>
+</form>
+</div>
+{% endblock %}

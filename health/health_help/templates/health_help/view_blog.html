@@ -1,0 +1,20 @@
+{% extends 'health_help/layout.html' %}
+{% block title %}View blog{% endblock %}
+{% block body %}
+<h1 class="display-3 text-center">{{title}}</h1>
+<hr style="width:50%" class="mx-auto">
+<h3 class="text-center text-info fs-4"><i class="bi bi-person-circle"></i> {{username}}</h3>
+    <div class="text-center mx-auto" style="padding:20px;width:50%">
+        {% if message %}
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endif %}
+        <img src="{{image}}" alt="{{image}}" id="view-blog-img">
+    </div>
+
+  <p class="lead text-center" style="padding: 20px;">{{text}}</p>
+
+
+{% endblock %}

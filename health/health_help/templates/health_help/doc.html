@@ -1,0 +1,154 @@
+{% extends 'health_help/layout.html' %}
+{% load static %}
+{% block title %}View Doctor{% endblock %}
+{% block body %}
+
+<h1 class="text-center display-3">Medical information of {{user_name}}.</h1>
+<hr style="width:50%" class="mx-auto">
+{% if user.is_authenticated %}
+<div class="alert alert-warning mx-auto text-center" style="width:50%" role="alert" id="calories-doc">
+</div>  
+<br>
+{% endif %}
+{% if message %}
+<div class="alert alert-alert mx-auto text-center" style="width:50%" role="alert">
+  <h3 class="text-center">{{message}}</h3>
+</div>       
+{% endif %}
+<br>
+
+<div class="container mx-auto text-center">
+    <div class="row">
+      <div class="col mx-auto text-center">
+        <h3 class="text-center mx-auto fw-bold">Tablets Taken</h3>
+        <ul class="list-group" id="tab-list-group">
+        {% for tablet in tablets %}
+        <li class="text-start list-group-item" style="margin:20px">
+        <div class="text-dark">
+        <h3 class="text-start fw-bold">{{tablet.tablet_name}} at {{tablet.time_taken}}.</h3>
+        {% if tablet.doctor %}
+        <b class="text-start ">Prescribed by - {{tablet.doctor}}</b>
+        {% endif %}
+        {% if tablet.doseage %}
+        <br>
+        <b class="text-start ">Doseage - {{tablet.doseage}}</b>
+        {% endif %}
+        {% if tablet.reason %}
+        <br>
+        <b class="text-start ">Prescribed for -{{tablet.reason}}</b>
+        {% endif %}
+
+        </div>
+        </li>
+        {% endfor %}
+        </ul>
+        {% if user.is_authenticated %}
+        {% if request.user.username == user_name %}
+      <div class="mx-auto text-center"><button type="button" class="btn btn-light mx-auto btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Take notes based on your doctor's feedback.
+        </button>
+        </div>
+        
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-dark text-center" id="staticBackdropLabel">Take notes based on your doctor's feedback</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="container mx-auto text-center">
+                      <div class="card mx-auto" style="width:100%">
+                          <div class="card-body">
+                              <div class="form-group">
+                                  <textarea class="form-control" id="addTxt" rows="3"></textarea>
+                              </div>
+                              <br>
+                              <button class="btn btn-dark" id="addBtn">Add Note</button>
+                              <a class="btn btn-danger" data-bs-toggle="collapse" href="#drop" role="button" aria-expanded="false" aria-controls="drop">
+                                Your Notes
+                              </a>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="collapse mx-auto" id="drop">
+                        <div class="card card-body mx-auto" style="width:100%">
+                          <div id="notes" class="row container-fluid text-dark"> </div>
+                        </div>
+                      </div>
+                  
+                  </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      
+      {% endif %}
+      {% endif %}
+      </div>
+
+
+      <div class="col">
+            
+          <h3 class="text-center mx-auto fw-bold fs-3">Comments</h3>
+        {% if request.user.username == user_name %}
+        <ul class="text-center mx-auto list-group">
+            {% for comment in comments %}
+                <li class="text-center list-group-item fw-bold">{{comment.comments}} - {{comment.comment_name}}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+        <form action="{% url 'view_doc' code_to_join %}" method="post" class="text-center ">
+            {% csrf_token %}
+            <input type="text" name="comment" id="comment" placeholder="Comment" required>
+            <input type="text" name="comment-name" id="comment-name" placeholder="Commenting as Dr..." required>
+
+            <br>
+            <button class="btn btn-light" type="submit">Add comment</button>
+        </form>
+      </div>
+      {% endif %}
+      {% if user.is_authenticated %}
+      {% if request.user.username == user_name %}
+      <br>
+      <div id="map" >
+        <h3 class="text-center fw-bol">Add a google map to your doctor's clinic.</h3>
+        <br>
+        <form action="{% url 'embed_map' %}" method="POST">
+          {% csrf_token %}
+          <label for="map_url" class="text-center">Name of your Doctor's Clinic.<br> Eg: Doctor Name Surname in Someplace.</label>
+          <input type="text" name="map_query" id="map_query" required>
+          <br>
+          <br>
+          <label for="name_doc" class="text-start">Name of the doctor.</label>
+          <input type="text" name="name_doc" id="name_doc" required>
+          <br>
+          <br>
+          <button class="btn btn-dark text-center" style="width:50%" type="submit">Add Map</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% endif %}
+<br>
+
+{% if user.is_authenticated %}
+{% if request.user.username == user_name %}
+<h2 class="text-center fw-bold">Maps to some of your Doctor's clinics.</h2>
+
+{% for data in map_data %}
+
+<div class="maps mx-auto">
+  <iframe src="{{link}}{{data.map_query}}" id="iframe-id" height="250" width="450"></iframe>
+  <br>
+  <label for="iframe-id">{{data.doctor_name}}</label>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endif %}
+
+<script src="{% static 'health_help/notes.js' %}"></script>
+
+{% endblock %}

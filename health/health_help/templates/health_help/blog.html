@@ -1,0 +1,27 @@
+{% extends 'health_help/layout.html' %}
+{% block title %}Blog{% endblock %}
+{% block body %}
+<h1 class="display-3 text-center">Blog</h1>
+<hr style="width:50%" class="mx-auto">
+<div class="mx-auto text-center">
+    <a class="btn-light btn" style="width:50%" href="{% url 'add_post' %}">Add a post</a>
+</div>
+{% if message %}
+<div class="alert alert-success mx-auto text-center" style="width:50%" role="alert">
+    {{ message }}
+  </div>       
+  {% endif %}
+<br>
+{% for blog in blogs %}
+<div class="blog-card-display mx-auto">
+    <a href="{% url 'view_blog' blog.unique_id %}" style="text-decoration: none;color:black">
+        <h1 class="text-center fw-bold">{{blog.title}}</h1>
+        <p class="text-center  text-success">- {{blog.user_name}}</p>
+        </a>
+</div>
+{% endfor %}
+
+
+
+
+{% endblock %}

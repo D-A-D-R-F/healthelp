@@ -1,0 +1,5 @@
+Hello , {{doctor_email}}.
+This is an invite for you to join the shared group of your patient , {{patient}} on Healthelp.
+
+To join kindly use the following link : - 
+{{code}}

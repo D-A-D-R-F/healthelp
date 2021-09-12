@@ -1,0 +1,66 @@
+{% extends 'health_help/layout.html' %}
+{% load static %}
+{% block title %}View Tablets{% endblock %}
+{% block body %}
+<h1 class="text-center display-3">View Tablets</h1>
+<hr style="width:50%" class="mx-auto">
+{% if message %}
+<div class="alert alert-success mx-auto text-center" style="width:50%" role="alert">
+    {{ message }}
+  </div>       
+  {% endif %}
+<br>
+
+
+
+
+
+<label disabled hidden id="time_taken">{{time}}</label>
+<label disabled hidden id="tablet_name_hidden">{{tablet}}</label>
+
+<div class="container mx-auto text-center">
+  <div class="row">
+    <div class="col">
+      <h3 class="text-center  display-4">{{tablet}}</h3>
+
+      <form action="{% url 'view_tab' tablet %}" method="post">
+        {% csrf_token %}
+          <input type="text" name="doseage" id="doseage" placeholder="Doseage" class="view-form">
+          <br>
+          <input type="text" name="for" id="for" placeholder="To cure" class="view-form">
+          <br>
+          <input type="text" name="prescribed_by" id="prescribed_by" placeholder="Prescribed by" class="view-form">
+          <br>
+          <input type="submit" value="Edit" class="btn btn-success" style="margin-top: 20px;width:20vw">
+      
+          <br>
+      </form>
+      
+      <form action="{% url 'delete_tab' tablet %}" method="post" class="mx-auto">
+        {% csrf_token %}
+      <input type="text" disabled hidden>
+      <input type="submit" value="Delete" class="btn btn-danger" style="margin-top: 20px;width:20vw">
+      </form>
+    </div>
+    <div class="col">
+      <h3 class="display-4 text-center">Time Taken</h3>
+      <h3 class="text-center display-4 fw-bold" style="padding:20px;">{{time}}</h3>
+    </div>
+    <div class="col">
+      <h3 class="display-4 text-center">Information</h3>
+
+      <div class="mx-auto info-div">
+        {{tablet}}
+         <br>
+         Doseage - {{doseage}}
+         <br>
+         To cure - {{reason}}
+         <br>
+         Prescribed by - {{doctor}}
+       </div>    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

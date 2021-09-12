@@ -1,0 +1,41 @@
+{% extends 'health_help/layout.html' %}
+{% block title %}Register{% endblock %}
+{% block body %}
+{% if user.is_authenticated %}
+<div class="text-center mx-auto display-1" style="width:75%">
+    <br>
+    <p class="fw-bold display-5">Looks like this page isn't accessible while you are logged in.</p>
+    <a href="{% url 'index' %}" class="btn btn-light mx-auto">Return Home</a>
+</div>
+{% else %}
+<div class="register-form-container">
+<form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+    <div class="mx-auto text-center">
+        <h1 class="text-center display-4">Register</h1>
+        <br>
+        {% if message %}
+        <div class="alert alert-warning mx-auto" style="width:50%" role="alert">
+            {{ message }}
+          </div>       
+          {% endif %}
+        
+
+        <input type="email" name="email" id="user-email" required placeholder="Email Id">
+        <br>
+        <input type="text" name="username" id="username" required placeholder="Username">
+        <br>
+        <input type="password" name="password" id="password" required placeholder="Password">
+        <br>
+        <input type="password" name="confirmation" id="confirmation" required placeholder="Password (again)">
+        <br>
+        <button type="submit" class="btn btn-light" id="submit-btn">SUBMIT</button>
+        <br>
+        <br>
+        <p class="fw-bold">Already have an account? <a href="{% url 'login' %}" class="btn btn-info">Login here</a></p>
+    </div>
+</form>
+</div>
+{% endif %}
+
+{% endblock %}

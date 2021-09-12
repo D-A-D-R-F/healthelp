@@ -1,0 +1,57 @@
+{% extends 'health_help/layout.html' %}
+{% load static %}
+{% block title %}Tablets{% endblock %}
+{% block body %}
+<h1 class="text-center display-3">Dosage Tracker</h1>
+{% if message %}
+<div class="alert alert-success mx-auto text-center" style="width:50%" role="alert">
+    {{ message }}
+  </div>       
+  {% endif %}
+<h6 class="text-center mx-auto">Enter the name of your tablet and the time at which you take it daily.</h6>
+<br>
+<div class="text-center mx-auto  fw-bold">
+<form action="{% url 'tablets' %}" method="post" id="tab-form">
+    {% csrf_token %}
+    <label for="tab-name" class="text-start">Tablet name</label>
+    <br>
+    <input type="text" name="tab_name" id="tab-name" class="tab-inp" required >
+    <br>
+    <br>
+    <label for="time-taken" class="text-start">Regular time.</label>
+    <br>
+    <input type="time" name="time_taken" id="time-taken" class="tab-inp" required>
+    <br>
+    <br>
+    <input type="submit" value="Add Tablet" class="btn btn-light">
+</form>
+</div>
+<br>
+
+
+  <br>
+
+<table class="table table-light mx-auto text-center" style="margin:20px;width:75%">
+    <thead>
+      <tr class="table-light">
+        <th scope="col">Tablet Name</th>
+        <th scope="col">Taken at</th>
+      </tr>
+    </thead>
+    <tbody>
+          {% for tab in tabs %}
+          <tr class="table-light">
+            <td><a href="{% url 'view_tab' tab.tablet_name %}">{{tab.tablet_name}}</a></td>
+            <td>{{tab.time_taken}}</td>
+
+       </tr>
+
+          {% endfor %}
+
+
+    </tbody>
+  </table>
+
+
+
+{% endblock %}

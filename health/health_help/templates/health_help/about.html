@@ -1,0 +1,47 @@
+{% extends 'health_help/layout.html' %}
+{% block title %}About{% endblock %}
+{% block body %}
+
+<div id="abt" class="text-center">
+    <h1 class="text-center display-1">About</h1>
+    <p class="text-center fs-3">
+         This project is a submission for the <a href="https://twtcodejam.net/" style="color: white;">Tech With Tim</a> code jam.
+        <br>
+        It is built using <b>django</b> , <b>html</b> ,  <b>css</b> and a little bit of <b>Javascript</b>.
+        <br>
+        There are a bunch of features on this site , such as a tablet
+        <br>tracker , blog section , fact section and a couple more , which I'll let you check out!
+    </p>
+    <hr style="width:50%" class="mx-auto">
+
+    <h2 class="text-center display-6">So who am I ?</h2>
+    <p class="text-center fs-3">Hi , My name is Davis and I built this website. I am 14 years old , currently studying in the 9th grade.
+        <br>
+        I love making websites like these and am fascinated with tech!</p>
+    <hr style="width:50%" class="mx-auto">
+    <br>
+    <h4 class="text-center fs-2">Contact Me</h4>
+    <p class="text-center fs-4">Do send me a message if you find any issue with the site, or even if you just want to say hi!</p>
+    
+
+    <form action="{% url 'about' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="name-contact" class="contact" placeholder="Your name..." required> 
+        <br>
+        <input type="email" name="email-contact" class="contact" placeholder="Your email..." required>
+        <br>
+        <textarea type="text" name="message-contact" class="contact" placeholder="Your message..." required></textarea>
+        <br>
+        <button class="btn-light btn" style="width:25%" type="submit">Submit</button>
+        
+    </form>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
