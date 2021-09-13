@@ -5,7 +5,7 @@
 
 
 ## Note
-Works Best on Laptops and Computers
+### Works Best on Laptops and Computers
 
 # Features
 ### 1.[Tablet Tracker](https://healthelp.herokuapp.com/tablets) - Track your daily tablet intake and never forget to take your tablets on time.  
@@ -20,7 +20,7 @@ Works Best on Laptops and Computers
 
 # Usage
 
-### Nothing much , just open your browser , navigate over to [https://healthelp.herokuapp.com/](https://healthelp.herokuapp.com/) , create an account and experience Healthelp!
+### Just open your browser , navigate over to [https://healthelp.herokuapp.com/](https://healthelp.herokuapp.com/) , create an account and experience Healthelp!
 
 
 
