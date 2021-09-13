@@ -24,7 +24,7 @@
 
 # Thank you!
 
-<span style="text-align:center">I appreciate you taking the time to read about my project , I do hope you like it!  </span>
+<p style="text-align:center">I appreciate you taking the time to read about my project , I do hope you like it!</p>
 
 
 
