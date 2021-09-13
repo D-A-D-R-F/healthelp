@@ -1,4 +1,3 @@
-
 # [Healthelp](https://healthelp.herokuapp.com)
 ### Healthelp is a website which helps manage and track your health.
 
@@ -22,6 +21,7 @@
 2. 
 ### 3.[Doctor](https://healthelp.herokuapp.com/doctor)-  
 ![Doctor](https://user-images.githubusercontent.com/69009528/133153947-98952e40-c11a-458b-9e16-f9bac1e49eaf.png)
+![Doc](https://user-images.githubusercontent.com/69009528/133154437-3d1388c3-0b8f-4934-af3b-5029c150746c.png)
 
 
 
@@ -45,10 +45,14 @@
 3. Calculate your required calorie intake with the calorie counter.  
 
 ### 5.[Blog](https://healthelp.herokuapp.com/blog) -  
+![blog](https://user-images.githubusercontent.com/69009528/133154804-8ddcf4b0-6452-426e-98c6-a3f091bffacc.PNG)
+
+
 1. Read through health blogs by other users
 2. You can add a blog , along with an optional url to an image associated with the post.
 
 ### 6. Covid Tracker  
+![covid](https://user-images.githubusercontent.com/69009528/133154935-f47eecee-90a7-49bb-821d-0bbe33bc0b54.PNG)
 1. This is a small , bonus feature which is seen after you login , on the home page.
 
 # Usage
