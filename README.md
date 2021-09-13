@@ -33,7 +33,9 @@
 2. Get low calorie recipe recommendations
 3. Calculate your required calorie intake with the calorie counter.  
 
-### 5.[Blog](https://healthelp.herokuapp.com/blog) - Read through health blogs by other users
+### 5.[Blog](https://healthelp.herokuapp.com/blog) -  
+1. Read through health blogs by other users
+2. You can add a blog , along with an optional url to an image associated with the post.
 
 # Usage
 
