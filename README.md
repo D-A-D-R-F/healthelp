@@ -17,9 +17,16 @@
 1. Read through some interesting as well as funny facts on health.  
 
 ### 3.[Doctor](https://healthelp.herokuapp.com/doctor)-  
-1. Invite a Doctor to read your reports by sharing a code.
-2. You as a patient can do the following:-  
+#### 1. Invite a Doctor to read your reports by sharing a code.
+#### 2. You as a patient can do the following:-  
 * View the comments of your doctor.
+* View tablets taken by you (as inputed in the tablet section)
+* Take notes based on your doctor's feedback
+* Add a google map to your doctor's clinic
+* View google maps to your doctor's clinic
+#### 3. A doctor has the following abilities : -
+* He/She can view a patient's information by just visiting the url , as shown on the patient's 'doctor' page , no account required.
+* He/She can comment on the Patient's reports.
 
 ### 4.[Excercise](https://healthelp.herokuapp.com/excercise) - Get Exercise Video recommendations along with recipe recommendations , with a calorie tracker to calculate your required calorie intake.  
 
