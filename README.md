@@ -18,17 +18,10 @@ Works Best on Laptops and Computers
 
 ### 5.[Blog](https://healthelp.herokuapp.com/blog) - Read through health blogs by other users
 
-# Installation
-To install clone this repo or unzip it into a single folder.
+# Usage
 
-Django is required for the running of this application.
+### Nothing much , just open your browser , navigate over to [https://healthelp.herokuapp.com/](https://healthelp.herokuapp.com/) , create an account and experience Healthelp!
 
-Then run the following commands
-1. python manage.py migrate
-2. python manage.py runserver
 
-**Note** - Run the above commands after you 'cd' into health , after downloading the code.
-
-Finally go to http://127.0.0.1:8000 in your browser , create an account and experience **Healthelp**!
 
 
