@@ -19,8 +19,7 @@
 ### 3.[Doctor](https://healthelp.herokuapp.com/doctor)-  
 1. Invite a Doctor to read your reports by sharing a code.
 2. You as a patient can do the following:-  
-3. 
-..* View the comments of your doctor.
+* View the comments of your doctor.
 
 ### 4.[Excercise](https://healthelp.herokuapp.com/excercise) - Get Exercise Video recommendations along with recipe recommendations , with a calorie tracker to calculate your required calorie intake.  
 
