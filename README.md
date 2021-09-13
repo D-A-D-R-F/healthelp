@@ -22,9 +22,9 @@
 
 ### Just open your browser , navigate over to [https://healthelp.herokuapp.com/](https://healthelp.herokuapp.com/) , create an account and experience Healthelp!  
 
-# <span style="color:red">Thank you!</span>
+# Thank you!
 
-### I appreciate you taking the time to read about my project , I do hope you like it!
+<span style="text-align:center">I appreciate you taking the time to read about my project , I do hope you like it!  </span>
 
 
 
