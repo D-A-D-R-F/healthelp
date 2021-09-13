@@ -17,10 +17,11 @@ Blog - Read through health blogs by other users
 # Installation
 To install clone this repo or unzip it into a single folder.
 
+Django is required for the running of this application.
+
 Then run the following commands
-1. pip install -r requirements.txt
-2. python manage.py migrate
-3. python manage.py runserver
+1. python manage.py migrate
+2. python manage.py runserver
 
 **Note** - Run the above commands after you 'cd' into health , after downloading the code.
 
