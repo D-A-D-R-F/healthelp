@@ -10,13 +10,16 @@
 # Features
 ### 1.[Tablet Tracker](https://healthelp.herokuapp.com/tablets) -  
 
-1.Track your daily tablet intake and never forget to take your tablets on time.  
-2.Ability to add extra information such as doseage as well as to delete the entry.
+1. Track your daily tablet intake and never forget to take your tablets on time.  
+2. Ability to add extra information such as doseage as well as to delete the entry.
 
 ### 2.[Facts](https://healthelp.herokuapp.com/facts) -  
-1. Read through some interesting as well as funny facts on health  
+1. Read through some interesting as well as funny facts on health.  
 
-### 3.[Doctor](https://healthelp.herokuapp.com/doctor) -Invite a Doctor to read your reports  
+### 3.[Doctor](https://healthelp.herokuapp.com/doctor)-  
+1. Invite a Doctor to read your reports by sharing a code.
+2. You as a patient can do the following:-
+* View
 
 ### 4.[Excercise](https://healthelp.herokuapp.com/excercise) - Get Exercise Video recommendations along with recipe recommendations , with a calorie tracker to calculate your required calorie intake.  
 
