@@ -37,6 +37,9 @@
 1. Read through health blogs by other users
 2. You can add a blog , along with an optional url to an image associated with the post.
 
+### 6. Covid Tracker  
+1. This is a small , bonus feature which is seen after you login , on the home page.
+
 # Usage
 
 ### Just open your browser , navigate over to [https://healthelp.herokuapp.com/](https://healthelp.herokuapp.com/) , create an account and experience Healthelp!  
