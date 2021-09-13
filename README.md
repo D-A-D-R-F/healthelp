@@ -1,6 +1,6 @@
 # [Healthelp](https://healthelp.herokuapp.com)
-Healthelp is a website which helps manage and track your health.
-<img src="https://user-images.githubusercontent.com/69009528/133147854-14bde387-184e-462a-8d60-9b6a028a1a34.png" width="100" height="100" style="float:left">
+### Healthelp is a website which helps manage and track your health.
+
 
 
 
