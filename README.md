@@ -28,7 +28,10 @@
 * He/She can view a patient's information by just visiting the url , as shown on the patient's 'doctor' page , no account required.
 * He/She can comment on the Patient's reports.
 
-### 4.[Excercise](https://healthelp.herokuapp.com/excercise) - Get Exercise Video recommendations along with recipe recommendations , with a calorie tracker to calculate your required calorie intake.  
+### 4.[Excercise](https://healthelp.herokuapp.com/excercise) -  
+1. Get Exercise Video recommendations
+2. Get low calorie recipe recommendations
+3. Calculate your required calorie intake with the calorie counter.  
 
 ### 5.[Blog](https://healthelp.herokuapp.com/blog) - Read through health blogs by other users
 
