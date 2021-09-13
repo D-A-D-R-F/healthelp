@@ -16,9 +16,15 @@
 2. Ability to add extra information such as doseage as well as to delete the entry.
 
 ### 2.[Facts](https://healthelp.herokuapp.com/facts) -  
-1. Read through some interesting as well as funny facts on health.  
+![fact](https://user-images.githubusercontent.com/69009528/133153884-d2031fe3-7b6c-4359-b0cc-ace1f7e24981.PNG)  
 
+1. Read through some interesting as well as funny facts on health.  
+2. 
 ### 3.[Doctor](https://healthelp.herokuapp.com/doctor)-  
+![Doctor](https://user-images.githubusercontent.com/69009528/133153947-98952e40-c11a-458b-9e16-f9bac1e49eaf.png)
+![doc-view](https://user-images.githubusercontent.com/69009528/133154056-cff5a7e5-c6ea-4017-9930-2fbca0e7a8d8.PNG)
+
+
 #### 1. Invite a Doctor to read your reports by sharing a code.
 #### 2. You as a patient can do the following:-  
 * View the comments of your doctor.
@@ -30,7 +36,10 @@
 * He/She can view a patient's information by just visiting the url , as shown on the patient's 'doctor' page , no account required.
 * He/She can comment on the Patient's reports.
 
-### 4.[Excercise](https://healthelp.herokuapp.com/excercise) -  
+### 4.[Excercise](https://healthelp.herokuapp.com/excercise) - 
+![excercise](https://user-images.githubusercontent.com/69009528/133154099-750cedaf-e300-4c22-9130-8628279c1cfb.PNG)
+![recipies](https://user-images.githubusercontent.com/69009528/133154149-1538d00b-1ee6-4e30-b563-a4074732852b.PNG)
+
 1. Get Exercise Video recommendations
 2. Get low calorie recipe recommendations
 3. Calculate your required calorie intake with the calorie counter.  
