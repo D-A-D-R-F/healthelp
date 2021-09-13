@@ -22,7 +22,7 @@
 2. 
 ### 3.[Doctor](https://healthelp.herokuapp.com/doctor)-  
 ![Doctor](https://user-images.githubusercontent.com/69009528/133153947-98952e40-c11a-458b-9e16-f9bac1e49eaf.png)
-![doc-view](https://user-images.githubusercontent.com/69009528/133154056-cff5a7e5-c6ea-4017-9930-2fbca0e7a8d8.PNG)
+
 
 
 #### 1. Invite a Doctor to read your reports by sharing a code.
