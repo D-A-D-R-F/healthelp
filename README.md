@@ -62,7 +62,9 @@
 
 # Thank you!
 
-### I appreciate you taking the time to read about my project , I do hope you like it!
+### I appreciate you taking the time to read about my project , I do hope you like it!  
+  
+## Made by [D-A-D-R-F](https://github.com/D-A-D-R-F).
 
 
 
