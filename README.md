@@ -20,7 +20,7 @@
 1. Read through some interesting as well as funny facts on health.  
 2. 
 ### 3.[Doctor](https://healthelp.herokuapp.com/doctor)-  
-![Doctor](https://user-images.githubusercontent.com/69009528/133153947-98952e40-c11a-458b-9e16-f9bac1e49eaf.png)  
+![Doctor](https://user-images.githubusercontent.com/69009528/133275637-772b6732-b96b-4896-93bf-38cdb70929ef.png)  
 
 ![Doc](https://user-images.githubusercontent.com/69009528/133154437-3d1388c3-0b8f-4934-af3b-5029c150746c.png)
 
