@@ -4,7 +4,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render , redirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required, user_passes_test
-from spotipy import client
 from .models import User , Tablet , Facts , Blogs , Excercise , Recipies , Doctor , Comments , Maps
 import requests
 import datetime
@@ -168,33 +167,17 @@ def view_blog(request , unique_id):
 
 @login_required
 def doctor(request):
-    if request.method == 'POST':
-        doc_email = request.POST['doctor-email']
-        user_code = Doctor.objects.filter(username = request.user.username).first()
-        join_code = user_code.link
-        only_code = join_code.replace('http://127.0.0.1:8000/doctor/' , '')
-        html_message = render_to_string('health_help/email_template.html' , {'code': join_code , 'doctor_email':doc_email , 'patient':request.user.username})
-        template = render_to_string('health_help/email_message.txt' , {'code': join_code , 'doctor_email':doc_email , 'patient':request.user.username})
-        send_mail(subject=f"Invite to view medical info of {request.user.username} on Healthelp." ,
-        message=template ,
-        from_email=settings.EMAIL_HOST_USER ,
-        recipient_list=[doc_email] , 
-        fail_silently=False,
-        html_message=html_message 
-    )
-        return HttpResponseRedirect(reverse("view_doc", kwargs={'join_code': only_code}))
-    else:
-        tablets_taken = Tablet.objects.filter(username = request.user).all()
-        read_code = Doctor.objects.filter(username = request.user.username).first()
-        if read_code:
-            url = read_code.link
-        elif not read_code:
-            code = get_random_string(length=15)
-            link = "http://127.0.0.1:8000/doctor/" + code
-            insert = Doctor(username = request.user.username , link = link)
-            insert.save()
-            url = link
-        return render(request , "health_help/doctor.html" , {
+    tablets_taken = Tablet.objects.filter(username = request.user).all()
+    read_code = Doctor.objects.filter(username = request.user.username).first()
+    if read_code:
+        url = read_code.link
+    elif not read_code:
+        code = get_random_string(length=15)
+        link = "http://127.0.0.1:8000/doctor/" + code
+        insert = Doctor(username = request.user.username , link = link)
+        insert.save()
+        url = link
+    return render(request , "health_help/doctor.html" , {
             'tablets':tablets_taken , 
             'code': url
         })
