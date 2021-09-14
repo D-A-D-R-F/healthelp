@@ -12,19 +12,23 @@
 <div class="container mx-auto text-center">
 
           <h3 class="fw-bold text-center">Invite your doctor</h3>
+          <br>
           <b>Invite your doctor to view your account by clicking the button below.</b>
-        <form action="{% url 'doctor' %}" method="POST" id="doc-form">
-          {% csrf_token %}
+          
+          <br>       
             <input type="text" class="text-center" disabled value="{{code}}" id="code" name="code">
             <br>
             <br>
             <input type="email" class="text-center" id="doctor-email" name="doctor-email" placeholder="Enter your doctor's email:" required>
             <br>
             <br>
-            <button class="btn-info btn text-center mx-auto" style="width:25%" type="submit">Add</button>
-        </form>
+            <button class="btn-light btn text-center mx-auto" style="width:25%" type="submit" id="doc-submit">Send an Email</button>
+      
+        <br>
         <br>
           Or
+       
+
         <br>
         <br>
           <button class="btn-warning btn text-center mx-auto" style="width:25%" id="clipboard-add" type="button">Copy the code</button>
@@ -39,15 +43,28 @@
         text.select();
         text.setSelectionRange(0, 99999); 
         navigator.clipboard.writeText(text.value);
-        alert("Link Copied!")
+        alert("Link Copied! Send this link to your doctor.")
 
         
       }
 
-      document.getElementById("doc-form").onsubmit = function confirm(){
+      document.getElementById("doc-submit").onclick = function confirm(){
         var doc_email = document.getElementById("doctor-email").value
-        alert(`An invite email will be sent to your doctor on ${doc_email}.`)
+        if (doc_email === ""){
+          alert("Please type in a valid email.")
+        }
+        else{
+
+        alert(`A email will be sent to your doctor at ${doc_email}. Kindly click on the send button and authorize the sending of the email in the window that opens. (Please ensure that popups are allowed in your browser.)`)
+        var url = `mailto:${doc_email}?subject=Invite to view medical info of {{request.user.username}} on Healthelp.&body=Hello , ${doc_email}. This is an invite for you to view the shared information of your patient , {{request.user.username}} on Healthelp. To view please visit {{code}}.
+        This email was sent by Healthelp upon confirmation from {{request.user.username}}.
+        Thank you.
+        `
+        window.open(url)
       }
+    }
+
+
   </script>
 
 {% endblock %}
