@@ -5,7 +5,7 @@
 
 
 ## Note
-### Works Best on Laptops and Computers
+### 1. The website is designed for Laptops and Computers and may not work properly on other devices.
 
 # Features
 ### 1.[Tablet Tracker](https://healthelp.herokuapp.com/tablets) -  
